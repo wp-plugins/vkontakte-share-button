@@ -9,7 +9,7 @@ Plugin Name: VKontakte Share Button
 Plugin URI: http://www.jackyfox.com/vk-share-button/
 Description: The plugin implements the API function VKontakte social network that adds the link share button.
 Author: Eugene Padlov
-Version: 1.0.0.29
+Version: 1.0.0.30
 Author URI: http://www.jackyfox.com/
 License: GPL2
 */
