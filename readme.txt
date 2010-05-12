@@ -2,10 +2,10 @@
 
 Contributors: jackyfox
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NRYHZVJNPGGA6
-Tags: vkontakte, share, social
+Tags: vkontakte, share, social, Post, plugin, links, page
 Requires at least: 2.7
-Tested up to: 2.9.2
-Stable tag: 1.0.0.28
+Tested up to: 3.0
+Stable tag: 1.0.0.30
 
 Plugin allows you to add fully customizable share button of VKontakte social network.
 
@@ -41,7 +41,7 @@ Sure! Remember to send `.mo` and `.po` files to me through [Contact Form](http:/
 
 = How can I request that you improve or add a feature? =
 
-Yes. Visit [plugin page](http://www.jackyfox.com/vk-share-button/ "Contact form form at the bottom of page") on my site and use contact form or post a comment.
+Visit [plugin page](http://www.jackyfox.com/vk-share-button/ "Contact form at the bottom of page") on my site and use contact form or post a comment.
 
 == Screenshots ==
 
@@ -52,10 +52,14 @@ Yes. Visit [plugin page](http://www.jackyfox.com/vk-share-button/ "Contact form 
 
 == Changelog ==
 
+= 1.0.0.30 =
+* CSS fix for button structure
+* Tested on WP 3.0-beta2-14576
+
 = 1.0.0.28 =
 * First public release
 
 == Upgrade Notice ==
 
-= 1.0.0.28 =
-You should upgrade to this version because there is no another
+= 1.0.0.30 =
+If you have plroblem with spaces between parts of the button you should upgrade

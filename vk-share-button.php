@@ -9,7 +9,7 @@ Plugin Name: VKontakte Share Button
 Plugin URI: http://www.jackyfox.com/vk-share-button/
 Description: The plugin implements the API function VKontakte social network that adds the link share button.
 Author: Eugene Padlov
-Version: 1.0
+Version: 1.0.0.29
 Author URI: http://www.jackyfox.com/
 License: GPL2
 */
@@ -143,9 +143,6 @@ class VKShareButton
 			case 'none':
 				$descr = '';
 		}
-		/*$descr = get_option('vk_share_button_description') == 'default' ? 
-			js_escape(substr(strip_tags($post->post_content), 0, 350)) : 
-			js_escape(get_option('vk_share_button_description_text'));*/
 		$thumb = js_escape(get_option('vk_share_button_thumbnail'));
 		$type = js_escape(get_option('vk_share_button_type'));
 		// If custom buttom type selected use unconverted text
@@ -197,7 +194,6 @@ class VKShareButton
 	// Localization support
 	function load_domain()
 	{
-		//$mofile = $this->plugin_url . 'lang/' . $this->plugin_domain . '-' . $locale . '.mo';
 		$mofile = dirname(__FILE__) . '/lang/vk-share-button-' . get_locale() . '.mo';
 		
 		load_textdomain($this->plugin_domain, $mofile);
