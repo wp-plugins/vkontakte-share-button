@@ -66,6 +66,12 @@ jQuery(document).ready(function($){
 	<?php _e('Pages', $this->plugin_domain) ?></label>
 	</fieldset></td>
 	</tr>
+	
+	<tr valign="top">
+	<th scope="row"><label for="vk_share_button_exlude"><?php _e('Exclude pages and posts with IDs', $this->plugin_domain) ?></label></th>
+	<td><input type="text" name="vk_share_button_exlude" value="<?php echo esc_attr($this->exclude); ?>" class="regular-text" />
+	<span class="description"><?php _e('Specify IDs of pages and posts which should stay without buttons (separated by commas, eg <code>4, 8, 15, 16, 23, 42</code>)', $this->plugin_domain) ?></span></td>
+	</tr>
 
 	<tr valign="top">
 	<th scope="row"><label for="vk_share_button_text"><?php _e('Text on button', $this->plugin_domain) ?></label></th>

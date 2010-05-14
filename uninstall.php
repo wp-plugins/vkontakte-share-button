@@ -13,4 +13,5 @@ delete_option('vk_share_button_vposition');
 delete_option('vk_share_button_show_on_posts');
 delete_option('vk_share_button_show_on_pages');
 delete_option('vk_share_button_noparse');
+delete_option('vk_share_button_exlude');
 ?>

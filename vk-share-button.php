@@ -9,7 +9,7 @@ Plugin Name: VKontakte Share Button
 Plugin URI: http://www.jackyfox.com/vk-share-button/
 Description: The plugin implements the API function VKontakte social network that adds the link share button.
 Author: Eugene Padlov
-Version: 1.0.0.30
+Version: 1.0.0.31
 Author URI: http://www.jackyfox.com/
 License: GPL2
 */
@@ -36,6 +36,7 @@ class VKShareButton
 {
 	var $plugin_url;
 	var $plugin_domain = 'vk-share-button';
+	var $exclude; // IDs of excluding pages and posts
 	
 	function VKShareButton()
 	{
@@ -63,21 +64,24 @@ class VKShareButton
 		add_action('wp_print_scripts', array(&$this, 'script_include'));
 		// Filter for processing button placing
 		add_filter('the_content', array(&$this, 'place_button'));
+		
+		$this->exclude = get_option('vk_share_button_exlude');
 	}
 	
 	function install()
 	{
 		//create options
-		update_option('vk_share_button_type', 'round');
-		update_option('vk_share_button_text', 'Save');
-		update_option('vk_share_button_description', 'auto');
-		update_option('vk_share_button_description_text', '');
-		update_option('vk_share_button_thumbnail', '');
-		update_option('vk_share_button_position', 'right');
-		update_option('vk_share_button_vposition', 'top');
-		update_option('vk_share_button_show_on_posts', TRUE);
-		update_option('vk_share_button_show_on_pages', FALSE);
-		update_option('vk_share_button_noparse', 'true');
+		add_option('vk_share_button_type', 'round');
+		add_option('vk_share_button_text', 'Save');
+		add_option('vk_share_button_description', 'auto');
+		add_option('vk_share_button_description_text', '');
+		add_option('vk_share_button_thumbnail', '');
+		add_option('vk_share_button_position', 'right');
+		add_option('vk_share_button_vposition', 'top');
+		add_option('vk_share_button_show_on_posts', TRUE);
+		add_option('vk_share_button_show_on_pages', FALSE);
+		add_option('vk_share_button_noparse', 'true');
+		add_option('vk_share_button_exlude', '');
 	}
 	
 	function register_settings()
@@ -93,6 +97,7 @@ class VKShareButton
 		register_setting( 'vksb-settings-group', 'vk_share_button_show_on_posts' );
 		register_setting( 'vksb-settings-group', 'vk_share_button_show_on_pages' );
 		register_setting( 'vksb-settings-group', 'vk_share_button_noparse' );
+		register_setting( 'vksb-settings-group', 'vk_share_button_exlude' );
 	}
 	
 	// Add options page
@@ -131,23 +136,25 @@ class VKShareButton
 	// Function returns the button code
 	function the_button() {
 		global $post;
-		$link =  js_escape(get_permalink($post->ID));
-		$title = js_escape($post->post_title);
+		$link =  esc_js(get_permalink($post->ID));
+		$title = esc_js($post->post_title);
 		switch (get_option('vk_share_button_description')) {
 			case 'auto':
-				$descr = js_escape(substr(strip_tags($post->post_content), 0, 350));
+				$descr = esc_js(substr(strip_tags($post->post_content), 0, 350));
+				if (strlen($post->post_content) > 350)
+					$descr .= '...';
 				break;
 			case 'global':
-				$descr = js_escape(get_option('vk_share_button_description_text'));
+				$descr = esc_js(get_option('vk_share_button_description_text'));
 				break;
 			case 'none':
 				$descr = '';
 		}
-		$thumb = js_escape(get_option('vk_share_button_thumbnail'));
-		$type = js_escape(get_option('vk_share_button_type'));
+		$thumb = esc_js(get_option('vk_share_button_thumbnail'));
+		$type = esc_js(get_option('vk_share_button_type'));
 		// If custom buttom type selected use unconverted text
 		$text = $type != 'custom' ? 
-			js_escape(get_option('vk_share_button_text')) : 
+			esc_js(get_option('vk_share_button_text')) : 
 			get_option('vk_share_button_text');
 		$noparse = get_option('vk_share_button_noparse');
 			
@@ -166,6 +173,12 @@ class VKShareButton
 
 	function place_button($content) {
 		// Here we place button on the page
+		global $post;
+		$exclude_ids = explode(",", $this->exclude);
+		foreach($exclude_ids as $id) {
+			if ($post->ID == $id)
+				return $content;
+		}
 		$clear_button = $this->the_button();
 		$pos = get_option('vk_share_button_position');
 		$vpos = get_option('vk_share_button_vposition');
