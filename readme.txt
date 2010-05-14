@@ -2,7 +2,7 @@
 
 Contributors: jackyfox
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NRYHZVJNPGGA6
-Tags: vkontakte, share, social, Post, plugin, links, page
+Tags: vkontakte, share, social, Post, plugin, links, page, social bookmarks, social bookmarking, bookmarking, bookmarks, bookmark
 Requires at least: 2.7
 Tested up to: 3.0
 Stable tag: 1.0.0.31
@@ -18,9 +18,10 @@ It supports all functions of VKontakte API and easy customizable:
 *  You can choose one of seven button appearance type include **custom**
 *  Place button on posts and/or pages at will
 *  Select location of button: before or after content, on the left or on the right
+*  Exclude pages and posts by ID which should stay without buttons
 *  Choose description of content: forepart of post/page or global description for all site
-*  Use your own site logo image
-
+*  Can be used description from meta tag `description`
+*  Use your own site logo image specifying link or with meta tag `image-src`
 
 == Installation ==
 

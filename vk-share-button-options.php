@@ -120,11 +120,22 @@ jQuery(document).ready(function($){
 </p>
 
 </form>
+
+<h3><?php _e('Like this plugin?', $this->plugin_domain) ?></h3>
+<p><?php _e('Why not do any of the following:', $this->plugin_domain) ?></p>
+
+<ul style="list-style: square inside; padding-left: 16px;">
+	<li><?php _e('Link to it so other folks can find out about it.', $this->plugin_domain) ?></li>
+	<li><?php _e('<a href="http://wordpress.org/extend/plugins/vkontakte-share-button/">Give it a good rating</a> on WordPress.org.', $this->plugin_domain) ?></li>
+</ul>
+<h3><?php _e('Need support?', $this->plugin_domain) ?></h3>
+<p><?php _e('If you have any problems or good ideas, please talk about them in the <a href="http://wordpress.org/tags/vkontakte-share-button">Support forums</a> or <a href="http://wordpress.org/tags/vkontakte-share-button">Plugin page</a>.', $this->plugin_domain) ?></p>
+
 </div>
 </div>
 
 <div style="width: 140px; float: right; height: 260px;" id="this-donate">
-	<h3><?php _e('Support', $this->plugin_domain) ?></h3>
+	<h3><?php _e('Support project', $this->plugin_domain) ?></h3>
 	<!-- PayPal Donate -->
 	<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 	<input type="hidden" name="cmd" value="_s-xclick">

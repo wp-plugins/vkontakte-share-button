@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Share Button\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-14 09:34+0300\n"
-"PO-Revision-Date: 2010-05-14 09:34+0300\n"
+"POT-Creation-Date: 2010-05-14 17:56+0300\n"
+"PO-Revision-Date: 2010-05-14 17:56+0300\n"
 "Last-Translator: jackyfox <fox.sawyer@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -172,8 +172,32 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
-#: ../vk-share-button-options.php:127
-msgid "Support"
+#: ../vk-share-button-options.php:124
+msgid "Like this plugin?"
+msgstr ""
+
+#: ../vk-share-button-options.php:125
+msgid "Why not do any of the following:"
+msgstr ""
+
+#: ../vk-share-button-options.php:128
+msgid "Link to it so other folks can find out about it."
+msgstr ""
+
+#: ../vk-share-button-options.php:129
+msgid "<a href=\"http://wordpress.org/extend/plugins/vkontakte-share-button/\">Give it a good rating</a> on WordPress.org."
+msgstr ""
+
+#: ../vk-share-button-options.php:131
+msgid "Need support?"
+msgstr ""
+
+#: ../vk-share-button-options.php:132
+msgid "If you have any problems or good ideas, please talk about them in the <a href=\"http://wordpress.org/tags/vkontakte-share-button\">Support forums</a> or <a href=\"http://wordpress.org/tags/vkontakte-share-button\">Plugin page</a>."
+msgstr ""
+
+#: ../vk-share-button-options.php:138
+msgid "Support project"
 msgstr ""
 
 #: ../vk-share-button.php:51
