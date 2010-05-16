@@ -121,6 +121,8 @@ jQuery(document).ready(function($){
 
 </form>
 
+<p><?php _e('Also, you can use <code>[vk-share-button]</code> shortcode to place the buttons anywhere on your posts and pages. Remember to exclude a page with the shortcode to avoid a problems.', $this->plugin_domain) ?></p>
+
 <h3><?php _e('Like this plugin?', $this->plugin_domain) ?></h3>
 <p><?php _e('Why not do any of the following:', $this->plugin_domain) ?></p>
 

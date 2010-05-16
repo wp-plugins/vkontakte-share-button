@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Share Button\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-14 17:56+0300\n"
-"PO-Revision-Date: 2010-05-14 17:56+0300\n"
+"POT-Creation-Date: 2010-05-16 10:47+0300\n"
+"PO-Revision-Date: 2010-05-16 10:47+0300\n"
 "Last-Translator: jackyfox <fox.sawyer@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -173,30 +173,34 @@ msgid "Save Changes"
 msgstr ""
 
 #: ../vk-share-button-options.php:124
+msgid "Also, you can use <code>[vk-share-button]</code> shortcode to place the buttons anywhere on your posts and pages. Remember to exclude a page with the shortcode to avoid a problems."
+msgstr ""
+
+#: ../vk-share-button-options.php:126
 msgid "Like this plugin?"
 msgstr ""
 
-#: ../vk-share-button-options.php:125
+#: ../vk-share-button-options.php:127
 msgid "Why not do any of the following:"
 msgstr ""
 
-#: ../vk-share-button-options.php:128
+#: ../vk-share-button-options.php:130
 msgid "Link to it so other folks can find out about it."
 msgstr ""
 
-#: ../vk-share-button-options.php:129
+#: ../vk-share-button-options.php:131
 msgid "<a href=\"http://wordpress.org/extend/plugins/vkontakte-share-button/\">Give it a good rating</a> on WordPress.org."
 msgstr ""
 
-#: ../vk-share-button-options.php:131
+#: ../vk-share-button-options.php:133
 msgid "Need support?"
 msgstr ""
 
-#: ../vk-share-button-options.php:132
+#: ../vk-share-button-options.php:134
 msgid "If you have any problems or good ideas, please talk about them in the <a href=\"http://wordpress.org/tags/vkontakte-share-button\">Support forums</a> or <a href=\"http://wordpress.org/tags/vkontakte-share-button\">Plugin page</a>."
 msgstr ""
 
-#: ../vk-share-button-options.php:138
+#: ../vk-share-button-options.php:140
 msgid "Support project"
 msgstr ""
 
@@ -204,15 +208,15 @@ msgstr ""
 msgid "VKontakte share button plugin requires Wordpress 2.7 or newer. <a href=\"http://codex.wordpress.org/Upgrading_WordPress\">Please update!</a>"
 msgstr ""
 
-#: ../vk-share-button.php:107
+#: ../vk-share-button.php:111
 msgid "VKontakte Share Button Plugin Settings"
 msgstr ""
 
-#: ../vk-share-button.php:107
+#: ../vk-share-button.php:111
 msgid "VK Share Button"
 msgstr ""
 
-#: ../vk-share-button.php:218
+#: ../vk-share-button.php:229
 msgid "Class VKShareButton already declared!"
 msgstr ""
 

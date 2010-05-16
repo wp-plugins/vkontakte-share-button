@@ -9,7 +9,7 @@ Plugin Name: VKontakte Share Button
 Plugin URI: http://www.jackyfox.com/vk-share-button/
 Description: The plugin implements the API function VKontakte social network that adds the link share button.
 Author: Eugene Padlov
-Version: 1.0.0.31
+Version: 1.0.0.34
 Author URI: http://www.jackyfox.com/
 License: GPL2
 */
@@ -64,6 +64,10 @@ class VKShareButton
 		add_action('wp_print_scripts', array(&$this, 'script_include'));
 		// Filter for processing button placing
 		add_filter('the_content', array(&$this, 'place_button'));
+		// Register widget
+		add_action('init', array(&$this, 'register_widget'));
+		// Shortcode
+		add_shortcode('vk-share-button', array(&$this, 'the_button'));
 		
 		$this->exclude = get_option('vk_share_button_exlude');
 	}
@@ -168,17 +172,19 @@ class VKShareButton
 		$button_code .= "  text: '$text'\r\n}));";
 		$button_code .= "\r\n-->\r\n</script>\r\n<!-- / vkontakte share button -->";
 		
-		return ($button_code);
+		return $button_code;
 	}
 
 	function place_button($content) {
 		// Here we place button on the page
 		global $post;
 		$exclude_ids = explode(",", $this->exclude);
-		foreach($exclude_ids as $id) {
+		
+		// Looking for exclusion
+		foreach($exclude_ids as $id) 
 			if ($post->ID == $id)
 				return $content;
-		}
+				
 		$clear_button = $this->the_button();
 		$pos = get_option('vk_share_button_position');
 		$vpos = get_option('vk_share_button_vposition');
@@ -187,10 +193,10 @@ class VKShareButton
 		
 		if ($pos == 'right')
 			// right alignment
-			$the_button = "<div style=\"float: $pos; margin: 0 0 5px 10px; \" id=\"vk-button\">\r\n$clear_button\r\n</div>";
+			$the_button = "<div style=\"float: $pos; margin: 0 0 5px 10px; \" class=\"vk-button\">\r\n$clear_button\r\n</div>";
 		else
 			// left alignment
-			$the_button = "<div style=\"float: $pos; margin: 0 10px 5px 0;\" id=\"vk-button\">\r\n$clear_button\r\n</div>";
+			$the_button = "<div style=\"float: $pos; margin: 0 10px 5px 0;\" class=\"vk-button\">\r\n$clear_button\r\n</div>";
 
 		if (is_single() && $show_on_post || is_page() && $show_on_page) {
 			if ($vpos == 'top')
@@ -210,6 +216,11 @@ class VKShareButton
 		$mofile = dirname(__FILE__) . '/lang/vk-share-button-' . get_locale() . '.mo';
 		
 		load_textdomain($this->plugin_domain, $mofile);
+	}
+	
+	function register_widget()
+	{
+		
 	}
 } // class VKShareButton
 
