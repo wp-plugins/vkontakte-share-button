@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: vkontakte, share, social, Post, plugin, links, page, social bookmarks, social bookmarking, bookmarking, bookmarks, bookmark
 Requires at least: 2.7
 Tested up to: 3.0
-Stable tag: 1.0.0.34
+Stable tag: 1.0.0.35
 
 Plugin allows you to add fully customizable share button of VKontakte social network.
 
@@ -23,7 +23,13 @@ It supports all functions of VKontakte API and easy customizable:
 *  Can be used description from meta tag `description`
 *  Use your own site logo image specifying link or with meta tag `image-src`
 
-Also you can use the shortcode `[vk-share-button]`. Remeber to exclude a page with the shortcode to avoid a problems.
+You can use the shortcode `[vk-share-button]`. Remeber to exclude a page with the shortcode to avoid a problems.
+
+Also can be used PHP code inside the Loop in your template:
+
+`<?php if (class_exists('VKShareButton'))
+          echo $VKShareButton->the_button() ?>`
+
 
 == Installation ==
 
@@ -70,6 +76,9 @@ To fix this you should cover `[vk-share-button]` shortcode with `div` or `span` 
 
 == Changelog ==
 
+= 1.0.0.35 =
+* Fixed bug with three dots instead of the description in Auto mode.
+
 = 1.0.0.34 =
 * Now you can use shorcode [vk-share-button]
 
@@ -85,6 +94,9 @@ To fix this you should cover `[vk-share-button]` shortcode with `div` or `span` 
 * First public release
 
 == Upgrade Notice ==
+
+= 1.0.0.35 =
+Upgrade if you get "..." instead of the description in Auto mode.
 
 = 1.0.0.31 =
 New features. See changelog
