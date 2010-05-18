@@ -9,7 +9,7 @@ Plugin Name: VKontakte Share Button
 Plugin URI: http://www.jackyfox.com/vk-share-button/
 Description: The plugin implements the API function VKontakte social network that adds the link share button.
 Author: Eugene Padlov
-Version: 1.0.0.35
+Version: 1.0.0.36
 Author URI: http://www.jackyfox.com/
 License: GPL2
 */
@@ -37,6 +37,8 @@ class VKShareButton
 	var $plugin_url;
 	var $plugin_domain = 'vk-share-button';
 	var $exclude; // IDs of excluding pages and posts
+	var $deslen;  // length of auto description
+	var $show_on_home; // bool for display buttons on front page
 	
 	function VKShareButton()
 	{
@@ -70,6 +72,8 @@ class VKShareButton
 		add_shortcode('vk-share-button', array(&$this, 'the_button'));
 		
 		$this->exclude = get_option('vk_share_button_exlude');
+		$this->deslen = get_option('vk_share_button_deslen');
+		$this->show_on_home = get_option('vk_share_button_show_on_home');
 	}
 	
 	function install()
@@ -84,8 +88,10 @@ class VKShareButton
 		add_option('vk_share_button_vposition', 'top');
 		add_option('vk_share_button_show_on_posts', TRUE);
 		add_option('vk_share_button_show_on_pages', FALSE);
+		add_option('vk_share_button_show_on_home', FALSE);
 		add_option('vk_share_button_noparse', 'true');
 		add_option('vk_share_button_exlude', '');
+		add_option('vk_share_button_deslen', '350');
 	}
 	
 	function register_settings()
@@ -100,8 +106,10 @@ class VKShareButton
 		register_setting( 'vksb-settings-group', 'vk_share_button_vposition' );
 		register_setting( 'vksb-settings-group', 'vk_share_button_show_on_posts' );
 		register_setting( 'vksb-settings-group', 'vk_share_button_show_on_pages' );
+		register_setting( 'vksb-settings-group', 'vk_share_button_show_on_home' );
 		register_setting( 'vksb-settings-group', 'vk_share_button_noparse' );
 		register_setting( 'vksb-settings-group', 'vk_share_button_exlude' );
+		register_setting( 'vksb-settings-group', 'vk_share_button_deslen' );
 	}
 	
 	// Add options page
@@ -144,14 +152,14 @@ class VKShareButton
 		$title = esc_js($post->post_title);
 		switch (get_option('vk_share_button_description')) {
 			case 'auto':
-				$temp = substr(strip_shortcodes(strip_tags($post->post_content)), 0, 350);
+				$temp = substr(strip_shortcodes(strip_tags($post->post_content)), 0, $this->deslen);
 				// Sometimes substr() returns substring with strange symbol in the end which crashes esc_js()
 				while (esc_js($temp) == '' && $temp != '')
 					$temp = substr($temp, 0, strlen($temp)-1);
 				
 				$descr = esc_js($temp);
 				
-				if (strlen($post->post_content) > 350 && $descr != '')
+				if (strlen($post->post_content) > $this->deslen && $descr != '')
 					$descr .= '...';
 				break;
 			case 'global':
@@ -204,7 +212,7 @@ class VKShareButton
 			// left alignment
 			$the_button = "<div style=\"float: $pos; margin: 0 10px 5px 0;\" class=\"vk-button\">\r\n$clear_button\r\n</div>";
 
-		if (is_single() && $show_on_post || is_page() && $show_on_page) {
+		if (is_single() && $show_on_post || is_page() && $show_on_page || is_home() && $this->show_on_home) {
 			if ($vpos == 'top')
 				// place button before post
 				return $the_button . $content;

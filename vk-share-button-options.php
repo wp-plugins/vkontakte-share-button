@@ -6,6 +6,11 @@ jQuery(document).ready(function($){
 			$("textarea[name='vk_share_button_description_text']").parents("tr").fadeIn("slow");
 		else 
 			$("textarea[name='vk_share_button_description_text']").parents("tr").fadeOut("slow");
+			
+		if ($(this).val() == 'auto')
+			$("input[name='vk_share_button_deslen']").parents("tr").fadeIn("slow");
+		else 
+			$("input[name='vk_share_button_deslen']").parents("tr").fadeOut("slow");
 	});
 });
 //]]>
@@ -64,6 +69,9 @@ jQuery(document).ready(function($){
 	<legend class="screen-reader-text"><span>Button are shown on</span></legend><label for="vk_share_button_show_on_pages">
 	<input name="vk_share_button_show_on_pages" type="checkbox" id="vk_share_button_show_on_pages" value="1" <?php checked(TRUE, $vksb_showpage); ?> />
 	<?php _e('Pages', $this->plugin_domain) ?></label>
+	<legend class="screen-reader-text"><span>Button are shown on</span></legend><label for="vk_share_button_show_on_home">
+	<input name="vk_share_button_show_on_home" type="checkbox" id="vk_share_button_show_on_home" value="1" <?php checked(TRUE, $this->show_on_home); ?> />
+	<?php _e('Frontpage', $this->plugin_domain) ?></label>
 	</fieldset></td>
 	</tr>
 	
@@ -86,7 +94,7 @@ jQuery(document).ready(function($){
 		<option <?php if($vksb_desc == 'global') echo("selected=\"selected\""); ?> value="global"><?php _e('Global', $this->plugin_domain) ?></option>
 		<option <?php if($vksb_desc == 'none') echo("selected=\"selected\""); ?> value="none"><?php _e('None', $this->plugin_domain) ?></option>
 	</select>
-	<span class="description"><?php _e('Page description. Auto - first 350 characters of post. Global - your own custom description (the same for each page). None - no description (good if you use meta tag <code>description</code>)', $this->plugin_domain) ?></span>
+	<span class="description"><?php _e('Page description. Auto - forepart of post. Global - your own custom description (the same for each page). None - no description (good if you use meta tag <code>description</code>)', $this->plugin_domain) ?></span>
 	</td>
 	</tr>
 	
@@ -96,6 +104,12 @@ jQuery(document).ready(function($){
 	<p><textarea name="vk_share_button_description_text" rows="5" cols="50" id="vk_share_button_description_text" class="large-text"><?php echo esc_attr($vksb_desc_text); ?></textarea>
 	</p>
 	</td>
+	</tr>
+	
+	<tr valign="top" <?php if ($vksb_desc != 'auto') echo("style=\"display: none;\"")?>>
+	<th scope="row"><label for="vk_share_button_deslen"><?php _e('Auto description length', $this->plugin_domain) ?></label></th>
+	<td><input type="text" name="vk_share_button_deslen" value="<?php echo esc_attr($this->deslen); ?>" class="regular-text" />
+	<span class="description"><?php _e('Default - first 350 characters of post', $this->plugin_domain) ?></span></td>
 	</tr>
 	
 	<tr valign="top">

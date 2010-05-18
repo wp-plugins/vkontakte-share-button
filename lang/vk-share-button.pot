@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Share Button\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-16 10:47+0300\n"
-"PO-Revision-Date: 2010-05-16 10:47+0300\n"
+"POT-Creation-Date: 2010-05-18 11:15+0300\n"
+"PO-Revision-Date: 2010-05-18 11:15+0300\n"
 "Last-Translator: jackyfox <fox.sawyer@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,208 +15,220 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../vk-share-button-options.php:17
+#: ../vk-share-button-options.php:22
 msgid "VKontakte Share Button Settings"
 msgstr ""
 
-#: ../vk-share-button-options.php:25
+#: ../vk-share-button-options.php:30
 msgid "Button type"
 msgstr ""
 
-#: ../vk-share-button-options.php:27
+#: ../vk-share-button-options.php:32
 msgid "Rounded corners with counter"
 msgstr ""
 
-#: ../vk-share-button-options.php:28
+#: ../vk-share-button-options.php:33
 msgid "Rounded corners without counter"
 msgstr ""
 
-#: ../vk-share-button-options.php:29
+#: ../vk-share-button-options.php:34
 msgid "Sharp corners with counter"
 msgstr ""
 
-#: ../vk-share-button-options.php:30
+#: ../vk-share-button-options.php:35
 msgid "Sharp corners without counter"
 msgstr ""
 
-#: ../vk-share-button-options.php:31
+#: ../vk-share-button-options.php:36
 msgid "Text link with icon"
 msgstr ""
 
-#: ../vk-share-button-options.php:32
+#: ../vk-share-button-options.php:37
 msgid "Text link without icon"
 msgstr ""
 
-#: ../vk-share-button-options.php:33
+#: ../vk-share-button-options.php:38
 msgid "Custom"
 msgstr ""
 
-#: ../vk-share-button-options.php:35
+#: ../vk-share-button-options.php:40
 msgid "Choose appearance of the button"
 msgstr ""
 
-#: ../vk-share-button-options.php:40
+#: ../vk-share-button-options.php:45
 msgid "Button horizontal position"
 msgstr ""
 
-#: ../vk-share-button-options.php:42
+#: ../vk-share-button-options.php:47
 msgid "Right"
 msgstr ""
 
-#: ../vk-share-button-options.php:43
+#: ../vk-share-button-options.php:48
 msgid "Left"
 msgstr ""
 
-#: ../vk-share-button-options.php:45
+#: ../vk-share-button-options.php:50
 msgid "Select which side you want to display the button: right or left"
 msgstr ""
 
-#: ../vk-share-button-options.php:50
+#: ../vk-share-button-options.php:55
 msgid "Button vertical position"
 msgstr ""
 
-#: ../vk-share-button-options.php:52
+#: ../vk-share-button-options.php:57
 msgid "On top of post"
 msgstr ""
 
-#: ../vk-share-button-options.php:53
+#: ../vk-share-button-options.php:58
 msgid "On bottom of post"
 msgstr ""
 
-#: ../vk-share-button-options.php:55
+#: ../vk-share-button-options.php:60
 msgid "Sets up before or after post/page button are shown"
 msgstr ""
 
-#: ../vk-share-button-options.php:60
-#: ../vk-share-button-options.php:61
+#: ../vk-share-button-options.php:65
+#: ../vk-share-button-options.php:66
 msgid "The Button displays on"
 msgstr ""
 
-#: ../vk-share-button-options.php:63
+#: ../vk-share-button-options.php:68
 msgid "Posts"
 msgstr ""
 
-#: ../vk-share-button-options.php:66
+#: ../vk-share-button-options.php:71
 msgid "Pages"
 msgstr ""
 
-#: ../vk-share-button-options.php:71
-msgid "Exclude pages and posts with IDs"
-msgstr ""
-
-#: ../vk-share-button-options.php:73
-msgid "Specify IDs of pages and posts which should stay without buttons (separated by commas, eg <code>4, 8, 15, 16, 23, 42</code>)"
-msgstr ""
-
-#: ../vk-share-button-options.php:77
-msgid "Text on button"
+#: ../vk-share-button-options.php:74
+msgid "Frontpage"
 msgstr ""
 
 #: ../vk-share-button-options.php:79
-msgid "Text are displayed on the button or html code for custom button type"
+msgid "Exclude pages and posts with IDs"
 msgstr ""
 
-#: ../vk-share-button-options.php:83
-msgid "Description"
+#: ../vk-share-button-options.php:81
+msgid "Specify IDs of pages and posts which should stay without buttons (separated by commas, eg <code>4, 8, 15, 16, 23, 42</code>)"
 msgstr ""
 
 #: ../vk-share-button-options.php:85
-msgid "Auto"
-msgstr ""
-
-#: ../vk-share-button-options.php:86
-msgid "Global"
+msgid "Text on button"
 msgstr ""
 
 #: ../vk-share-button-options.php:87
-msgid "None"
+msgid "Text are displayed on the button or html code for custom button type"
 msgstr ""
 
-#: ../vk-share-button-options.php:89
-msgid "Page description. Auto - first 350 characters of post. Global - your own custom description (the same for each page). None - no description (good if you use meta tag <code>description</code>)"
+#: ../vk-share-button-options.php:91
+msgid "Description"
+msgstr ""
+
+#: ../vk-share-button-options.php:93
+msgid "Auto"
 msgstr ""
 
 #: ../vk-share-button-options.php:94
-msgid "Custom description text"
+msgid "Global"
 msgstr ""
 
 #: ../vk-share-button-options.php:95
-msgid "Type global site description below"
+msgid "None"
+msgstr ""
+
+#: ../vk-share-button-options.php:97
+msgid "Page description. Auto - forepart of post. Global - your own custom description (the same for each page). None - no description (good if you use meta tag <code>description</code>)"
 msgstr ""
 
 #: ../vk-share-button-options.php:102
-msgid "Logo link"
+msgid "Custom description text"
 msgstr ""
 
-#: ../vk-share-button-options.php:104
-msgid "Link to thumbnail logo image, e.g. <code>http://your.site/vk.png</code>"
-msgstr ""
-
-#: ../vk-share-button-options.php:108
-msgid "Additional API parsing request"
+#: ../vk-share-button-options.php:103
+msgid "Type global site description below"
 msgstr ""
 
 #: ../vk-share-button-options.php:110
-msgid "Enable"
+msgid "Auto description length"
 msgstr ""
 
-#: ../vk-share-button-options.php:111
-msgid "Disable"
+#: ../vk-share-button-options.php:112
+msgid "Default - first 350 characters of post"
 msgstr ""
 
-#: ../vk-share-button-options.php:113
-msgid "Allow VKontakte to send request for empty share button parameters. Useful if you use meta tag <code>description</code> or <code>&lt;link rel=\"image_src\" href=\"http://mysite.com/mypic.jpg\" /&gt;</code> for logo image"
+#: ../vk-share-button-options.php:116
+msgid "Logo link"
 msgstr ""
 
-#: ../vk-share-button-options.php:119
-msgid "Save Changes"
+#: ../vk-share-button-options.php:118
+msgid "Link to thumbnail logo image, e.g. <code>http://your.site/vk.png</code>"
+msgstr ""
+
+#: ../vk-share-button-options.php:122
+msgid "Additional API parsing request"
 msgstr ""
 
 #: ../vk-share-button-options.php:124
-msgid "Also, you can use <code>[vk-share-button]</code> shortcode to place the buttons anywhere on your posts and pages. Remember to exclude a page with the shortcode to avoid a problems."
+msgid "Enable"
 msgstr ""
 
-#: ../vk-share-button-options.php:126
-msgid "Like this plugin?"
+#: ../vk-share-button-options.php:125
+msgid "Disable"
 msgstr ""
 
 #: ../vk-share-button-options.php:127
-msgid "Why not do any of the following:"
-msgstr ""
-
-#: ../vk-share-button-options.php:130
-msgid "Link to it so other folks can find out about it."
-msgstr ""
-
-#: ../vk-share-button-options.php:131
-msgid "<a href=\"http://wordpress.org/extend/plugins/vkontakte-share-button/\">Give it a good rating</a> on WordPress.org."
+msgid "Allow VKontakte to send request for empty share button parameters. Useful if you use meta tag <code>description</code> or <code>&lt;link rel=\"image_src\" href=\"http://mysite.com/mypic.jpg\" /&gt;</code> for logo image"
 msgstr ""
 
 #: ../vk-share-button-options.php:133
-msgid "Need support?"
+msgid "Save Changes"
 msgstr ""
 
-#: ../vk-share-button-options.php:134
-msgid "If you have any problems or good ideas, please talk about them in the <a href=\"http://wordpress.org/tags/vkontakte-share-button\">Support forums</a> or <a href=\"http://wordpress.org/tags/vkontakte-share-button\">Plugin page</a>."
+#: ../vk-share-button-options.php:138
+msgid "Also, you can use <code>[vk-share-button]</code> shortcode to place the buttons anywhere on your posts and pages. Remember to exclude a page with the shortcode to avoid a problems."
 msgstr ""
 
 #: ../vk-share-button-options.php:140
+msgid "Like this plugin?"
+msgstr ""
+
+#: ../vk-share-button-options.php:141
+msgid "Why not do any of the following:"
+msgstr ""
+
+#: ../vk-share-button-options.php:144
+msgid "Link to it so other folks can find out about it."
+msgstr ""
+
+#: ../vk-share-button-options.php:145
+msgid "<a href=\"http://wordpress.org/extend/plugins/vkontakte-share-button/\">Give it a good rating</a> on WordPress.org."
+msgstr ""
+
+#: ../vk-share-button-options.php:147
+msgid "Need support?"
+msgstr ""
+
+#: ../vk-share-button-options.php:148
+msgid "If you have any problems or good ideas, please talk about them in the <a href=\"http://wordpress.org/tags/vkontakte-share-button\">Support forums</a> or <a href=\"http://wordpress.org/tags/vkontakte-share-button\">Plugin page</a>."
+msgstr ""
+
+#: ../vk-share-button-options.php:154
 msgid "Support project"
 msgstr ""
 
-#: ../vk-share-button.php:51
+#: ../vk-share-button.php:53
 msgid "VKontakte share button plugin requires Wordpress 2.7 or newer. <a href=\"http://codex.wordpress.org/Upgrading_WordPress\">Please update!</a>"
 msgstr ""
 
-#: ../vk-share-button.php:111
+#: ../vk-share-button.php:119
 msgid "VKontakte Share Button Plugin Settings"
 msgstr ""
 
-#: ../vk-share-button.php:111
+#: ../vk-share-button.php:119
 msgid "VK Share Button"
 msgstr ""
 
-#: ../vk-share-button.php:229
+#: ../vk-share-button.php:243
 msgid "Class VKShareButton already declared!"
 msgstr ""
 

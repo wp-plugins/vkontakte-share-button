@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: vkontakte, share, social, Post, plugin, links, page, social bookmarks, social bookmarking, bookmarking, bookmarks, bookmark
 Requires at least: 2.7
 Tested up to: 3.0
-Stable tag: 1.0.0.35
+Stable tag: 1.0.0.36
 
 Plugin allows you to add fully customizable share button of VKontakte social network.
 
@@ -16,7 +16,7 @@ VKontakte Share Button plugin brings powerfull way to add VKontakte share button
 It supports all functions of VKontakte API and easy customizable:
 
 *  You can choose one of seven button appearance type include **custom**
-*  Place button on posts and/or pages at will
+*  Place button on posts, pages and frontpage at will
 *  Select location of button: before or after content, on the left or on the right
 *  Exclude pages and posts by ID which should stay without buttons
 *  Choose description of content: forepart of post/page or global description for all site
@@ -76,6 +76,10 @@ To fix this you should cover `[vk-share-button]` shortcode with `div` or `span` 
 
 == Changelog ==
 
+= 1.0.0.36 =
+* Now you can enanle the buttons on the frontpage
+* Auto description length is customizable
+
 = 1.0.0.35 =
 * Fixed bug with three dots instead of the description in Auto mode.
 
@@ -94,6 +98,9 @@ To fix this you should cover `[vk-share-button]` shortcode with `div` or `span` 
 * First public release
 
 == Upgrade Notice ==
+
+= 1.0.0.36 =
+If you want see the buttons on the frontpage and change the length of auto description you should upgrade.
 
 = 1.0.0.35 =
 Upgrade if you get "..." instead of the description in Auto mode.
