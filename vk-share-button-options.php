@@ -12,6 +12,16 @@ jQuery(document).ready(function($){
 		else 
 			$("input[name='vk_share_button_deslen']").parents("tr").fadeOut("slow");
 	});
+	$("input[name='vk_share_button_use_owncss']").change(function(){
+		if (this.checked) {
+			$("input[name='vk_share_button_owncss']").parents("tr").fadeIn("slow");
+			$("select[name='vk_share_button_position']").parents("tr").fadeOut("slow");
+		}
+		else {
+			$("input[name='vk_share_button_owncss']").parents("tr").fadeOut("slow");
+			$("select[name='vk_share_button_position']").parents("tr").fadeIn("slow");
+		}
+	});
 });
 //]]>
 </script>
@@ -41,7 +51,7 @@ jQuery(document).ready(function($){
 	</td>
 	</tr>
 	
-	<tr valign="top">
+	<tr valign="top" <?php if ($this->use_own_css) echo("style=\"display: none;\"")?>>
 	<th scope="row"><label for="vk_share_button_position"><?php _e('Button horizontal position', $this->plugin_domain) ?></label></th>
 	<td><select name="vk_share_button_position" id="vk_share_button_position" value="<?php echo $vksb_pos; ?>">
 		<option <?php if($vksb_pos == 'right') echo("selected=\"selected\""); ?> value="right"><?php _e('Right', $this->plugin_domain) ?></option>
@@ -59,6 +69,20 @@ jQuery(document).ready(function($){
 	</select>
 	<span class="description"><?php _e('Sets up before or after post/page button are shown', $this->plugin_domain) ?></p></span>
 	</td>
+	</tr>
+	
+	<tr valign="top">
+	<th scope="row"><?php _e('Use own CSS', $this->plugin_domain) ?></th>
+	<td><label for="vk_share_button_use_owncss">
+	<input name="vk_share_button_use_owncss" type="checkbox" id="vk_share_button_use_owncss" value="1" <?php checked(TRUE, $this->use_own_css); ?> />
+	<?php _e('Enable', $this->plugin_domain) ?></label>
+	</td>
+	</tr>
+	
+	<tr valign="top" <?php if (!$this->use_own_css) echo("style=\"display: none;\"")?>>
+	<th scope="row"><label for="vk_share_button_owncss"><?php _e('Custom CSS', $this->plugin_domain) ?></label></th>
+	<td><input type="text" name="vk_share_button_owncss" value="<?php echo $this->own_css; ?>" class="regular-text" />
+	<span class="description"><?php _e('CSS for div wraps the button. <strong>Notice</strong>, horizontal position option disabled with custom CSS. You sould take care of the button alignment, eg <code>float: right; margin: 0 0 5px 10px;</code> for the right position.', $this->plugin_domain) ?></span></td>
 	</tr>
 	
 	<tr valign="top">
@@ -150,8 +174,9 @@ jQuery(document).ready(function($){
 </div>
 </div>
 
-<div style="width: 140px; float: right; height: 260px;" id="this-donate">
-	<h3><?php _e('Support project', $this->plugin_domain) ?></h3>
+<div style="width: 130px; float: right; height: 310px; border: 1px solid #dadada; padding: 5px; margin-top: 10px;" id="this-donate">
+	<center>
+	<h3 style="margin-top: 0; padding-top: 0;"><?php _e('Support project', $this->plugin_domain) ?></h3>
 	<!-- PayPal Donate -->
 	<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 	<input type="hidden" name="cmd" value="_s-xclick">
@@ -162,5 +187,11 @@ jQuery(document).ready(function($){
 
 	<!-- Yandex Donate -->
 	<table cellpadding="0" cellspacing="0" border="0" style="font: 0.8em Arial, sans-serif;"><tr><td width="116" height="77" style="border: 0; background:url(https://img.yandex.net/i/money/top-hand-blue.gif) repeat-y; text-align:center; padding: 0;" align="center" valign="bottom"><form style="margin: 0; padding: 0 0 2px;" action="https://money.yandex.ru/donate.xml" method="post"><input type="hidden" name="to" value="41001198774354"/><input type="hidden" name="s5" value="hand"/><input type="submit" value="Так держать!"/></form></td></tr><tr><td width="116" height="38" style="font-size:13px; color:black;padding: 0; border: 0; background:url(https://img.yandex.net/i/money/bg-blue.gif) repeat-y; text-align:center; padding: 5px 0;" align="center" valign="top"><b>VK Share Button</b></td></tr><tr><td style="padding: 0; border:0;"><img src="https://img.yandex.net/i/money/bottom-blue.gif" width="116" height="40" alt="" usemap="#button" border="0" /><map name="button"><area alt="Яндекс" coords="38,2,49,21" href="http://www.yandex.ru"><area alt="Яндекс.Деньги" coords="52,1,84,28" href="https://money.yandex.ru"><area alt="Хочу такую же кнопку" coords="17,29,100,40" href="https://money.yandex.ru/choose-banner.xml"></map></td></tr></table>
+	
+	<!-- Webmoney -->
+	<p>
+	<a href="wmk:payto?Purse=R214581684777&Amount=10&Desc=Поддержка%20разработки%20плагина%20VKontakte-Share-Button&BringToFront=Y"><?php _e('Donate Webmoney', $this->plugin_domain) ?></a>
+	</p>
+	</center>
 </div>
 </div>

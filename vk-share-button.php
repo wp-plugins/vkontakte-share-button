@@ -9,7 +9,7 @@ Plugin Name: VKontakte Share Button
 Plugin URI: http://www.jackyfox.com/vk-share-button/
 Description: The plugin implements the API function VKontakte social network that adds the link share button.
 Author: Eugene Padlov
-Version: 1.0.0.36
+Version: 1.0.0.38
 Author URI: http://www.jackyfox.com/
 License: GPL2
 */
@@ -39,6 +39,8 @@ class VKShareButton
 	var $exclude; // IDs of excluding pages and posts
 	var $deslen;  // length of auto description
 	var $show_on_home; // bool for display buttons on front page
+	var $use_own_css;
+	var $own_css;  // Using own css style for wrap div
 	
 	function VKShareButton()
 	{
@@ -63,7 +65,7 @@ class VKShareButton
 		// Create custom plugin settings menu
 		add_action('admin_menu', array(&$this, 'create_menu'));
 		// add vk api scripts to head
-		add_action('wp_print_scripts', array(&$this, 'script_include'));
+		add_action('wp_print_scripts', array(&$this, 'add_head'));
 		// Filter for processing button placing
 		add_filter('the_content', array(&$this, 'place_button'));
 		// Register widget
@@ -74,6 +76,8 @@ class VKShareButton
 		$this->exclude = get_option('vk_share_button_exlude');
 		$this->deslen = get_option('vk_share_button_deslen');
 		$this->show_on_home = get_option('vk_share_button_show_on_home');
+		$this->use_own_css = get_option('vk_share_button_use_owncss');
+		$this->own_css = get_option('vk_share_button_owncss');
 	}
 	
 	function install()
@@ -92,6 +96,8 @@ class VKShareButton
 		add_option('vk_share_button_noparse', 'true');
 		add_option('vk_share_button_exlude', '');
 		add_option('vk_share_button_deslen', '350');
+		add_option('vk_share_button_use_owncss', FALSE);
+		add_option('vk_share_button_owncss', '');
 	}
 	
 	function register_settings()
@@ -110,6 +116,8 @@ class VKShareButton
 		register_setting( 'vksb-settings-group', 'vk_share_button_noparse' );
 		register_setting( 'vksb-settings-group', 'vk_share_button_exlude' );
 		register_setting( 'vksb-settings-group', 'vk_share_button_deslen' );
+		register_setting( 'vksb-settings-group', 'vk_share_button_use_owncss' );
+		register_setting( 'vksb-settings-group', 'vk_share_button_owncss' );
 	}
 	
 	// Add options page
@@ -136,12 +144,13 @@ class VKShareButton
 	}
 	
 	// Add VK-API script to head of each page
-	function script_include()
+	function add_head()
 	{
 		if (!is_admin())
 		{
 			echo '<link rel="stylesheet" href="'.$this->plugin_url.'vk-share-button.css" type="text/css" />';
 			wp_enqueue_script('vk_share_button_api_script', 'http://vkontakte.ru/js/api/share.js?5');
+			//wp_enqueue_script('vk_share_button_api_script', $this->plugin_url.'vk-share-api.js');
 		}
 	}
 	
@@ -205,12 +214,16 @@ class VKShareButton
 		$show_on_post = get_option('vk_share_button_show_on_posts');
 		$show_on_page = get_option('vk_share_button_show_on_pages');
 		
-		if ($pos == 'right')
-			// right alignment
-			$the_button = "<div style=\"float: $pos; margin: 0 0 5px 10px; \" class=\"vk-button\">\r\n$clear_button\r\n</div>";
+		if ($this->use_own_css)
+			// User defined CSS
+			$the_button = "<div style=\" $this->own_css \" class=\"vk-button\">\r\n$clear_button\r\n</div>";
 		else
-			// left alignment
-			$the_button = "<div style=\"float: $pos; margin: 0 10px 5px 0;\" class=\"vk-button\">\r\n$clear_button\r\n</div>";
+			if ($pos == 'right')
+				// right alignment
+				$the_button = "<div style=\"float: $pos; margin: 0 0 5px 10px; \" class=\"vk-button\">\r\n$clear_button\r\n</div>";
+			else
+				// left alignment
+				$the_button = "<div style=\"float: $pos; margin: 0 10px 5px 0;\" class=\"vk-button\">\r\n$clear_button\r\n</div>";
 
 		if (is_single() && $show_on_post || is_page() && $show_on_page || is_home() && $this->show_on_home) {
 			if ($vpos == 'top')
@@ -227,7 +240,7 @@ class VKShareButton
 	// Localization support
 	function load_domain()
 	{
-		$mofile = dirname(__FILE__) . '/lang/vk-share-button-' . get_locale() . '.mo';
+		$mofile = dirname(__FILE__) . '/lang/' . $this->plugin_domain . '-' . get_locale() . '.mo';
 		
 		load_textdomain($this->plugin_domain, $mofile);
 	}

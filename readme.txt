@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: vkontakte, share, social, Post, plugin, links, page, social bookmarks, social bookmarking, bookmarking, bookmarks, bookmark
 Requires at least: 2.7
 Tested up to: 3.0
-Stable tag: 1.0.0.36
+Stable tag: 1.0.0.38
 
 Plugin allows you to add fully customizable share button of VKontakte social network.
 
@@ -15,9 +15,9 @@ VKontakte Share Button plugin brings powerfull way to add VKontakte share button
 
 It supports all functions of VKontakte API and easy customizable:
 
-*  You can choose one of seven button appearance type include **custom**
+*  You can choose one of seven button appearance types include **custom**
 *  Place button on posts, pages and frontpage at will
-*  Select location of button: before or after content, on the left or on the right
+*  Select location of button: before or after content, on the left or right
 *  Exclude pages and posts by ID which should stay without buttons
 *  Choose description of content: forepart of post/page or global description for all site
 *  Can be used description from meta tag `description`
@@ -67,6 +67,10 @@ To fix this you should cover `[vk-share-button]` shortcode with `div` or `span` 
 
 `<div class="vk-button"> [vk-share-button] </div>`
 
+= How to resolve the positional conflict with the TweetMeme plugin =
+
+Simple. Add `clear: right;` property to TweetMeme CSS.
+
 == Screenshots ==
 
 1. Settings page
@@ -75,6 +79,9 @@ To fix this you should cover `[vk-share-button]` shortcode with `div` or `span` 
 4. Share Button in action
 
 == Changelog ==
+
+= 1.0.0.38 =
+* Custom CSS
 
 = 1.0.0.36 =
 * Now you can enanle the buttons on the frontpage
@@ -98,6 +105,8 @@ To fix this you should cover `[vk-share-button]` shortcode with `div` or `span` 
 * First public release
 
 == Upgrade Notice ==
+= 1.0.0.38 =
+If you were dissatisfied with the standard settings, now you can use your own CSS.
 
 = 1.0.0.36 =
 If you want see the buttons on the frontpage and change the length of auto description you should upgrade.
