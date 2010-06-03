@@ -13,7 +13,15 @@ delete_option('vk_share_button_vposition');
 delete_option('vk_share_button_show_on_posts');
 delete_option('vk_share_button_show_on_pages');
 delete_option('vk_share_button_show_on_home');
+delete_option('vk_share_button_show_on_cats');
+delete_option('vk_share_button_show_on_tags');
+delete_option('vk_share_button_show_on_date');
+delete_option('vk_share_button_show_on_auth');
+delete_option('vk_share_button_show_on_srch');
+
 delete_option('vk_share_button_noparse');
 delete_option('vk_share_button_exlude');
 delete_option('vk_share_button_deslen');
+delete_option('vk_share_button_use_owncss');
+delete_option('vk_share_button_owncss');
 ?>

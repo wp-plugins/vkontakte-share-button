@@ -9,7 +9,7 @@ Plugin Name: VKontakte Share Button
 Plugin URI: http://www.jackyfox.com/vk-share-button/
 Description: The plugin implements the API function VKontakte social network that adds the link share button.
 Author: Eugene Padlov
-Version: 1.0.0.38
+Version: 1.0.0.41
 Author URI: http://www.jackyfox.com/
 License: GPL2
 */
@@ -38,7 +38,16 @@ class VKShareButton
 	var $plugin_domain = 'vk-share-button';
 	var $exclude; // IDs of excluding pages and posts
 	var $deslen;  // length of auto description
+	
+	var	$show_on_post;
+	var	$show_on_page;
 	var $show_on_home; // bool for display buttons on front page
+	var $show_on_cats; // show button on category archives
+	var $show_on_tags; // show butoon on tag listing
+	var $show_on_date; // show button on date-based archives
+	var $show_on_auth; // show button on author archives
+	var $show_on_srch; // show button on search results pages
+	
 	var $use_own_css;
 	var $own_css;  // Using own css style for wrap div
 	
@@ -52,13 +61,13 @@ class VKShareButton
 		if (is_admin())
 			$this->load_domain();
 
-		$exit_msg = __('VKontakte share button plugin requires Wordpress 2.7 or newer. <a href="http://codex.wordpress.org/Upgrading_WordPress">Please update!</a>', $this->plugin_domain);
+		$exit_msg = __('VKontakte share button plugin requires Wordpress 2.8 or newer. <a href="http://codex.wordpress.org/Upgrading_WordPress">Please update!</a>', $this->plugin_domain);
 
-		if (version_compare($wp_version,"2.7","<"))
+		if (version_compare($wp_version,"2.8","<"))
 		{
 			exit ($exit_msg);
 		}
-		// installation
+		// Installation
 		register_activation_hook(__FILE__, array(&$this, 'install'));
 		// Register options settings
 		add_action('admin_init', array(&$this, 'register_settings'));
@@ -68,14 +77,21 @@ class VKShareButton
 		add_action('wp_print_scripts', array(&$this, 'add_head'));
 		// Filter for processing button placing
 		add_filter('the_content', array(&$this, 'place_button'));
-		// Register widget
-		add_action('init', array(&$this, 'register_widget'));
 		// Shortcode
 		add_shortcode('vk-share-button', array(&$this, 'the_button'));
 		
 		$this->exclude = get_option('vk_share_button_exlude');
 		$this->deslen = get_option('vk_share_button_deslen');
+		
+		$this->show_on_post = get_option('vk_share_button_show_on_posts');
+		$this->show_on_page = get_option('vk_share_button_show_on_pages');
 		$this->show_on_home = get_option('vk_share_button_show_on_home');
+		$this->show_on_cats = get_option('vk_share_button_show_on_cats');
+		$this->show_on_tags = get_option('vk_share_button_show_on_tags');
+		$this->show_on_date = get_option('vk_share_button_show_on_date');
+		$this->show_on_auth = get_option('vk_share_button_show_on_auth');
+		$this->show_on_srch = get_option('vk_share_button_show_on_srch');
+		
 		$this->use_own_css = get_option('vk_share_button_use_owncss');
 		$this->own_css = get_option('vk_share_button_owncss');
 	}
@@ -90,9 +106,16 @@ class VKShareButton
 		add_option('vk_share_button_thumbnail', '');
 		add_option('vk_share_button_position', 'right');
 		add_option('vk_share_button_vposition', 'top');
+		
 		add_option('vk_share_button_show_on_posts', TRUE);
 		add_option('vk_share_button_show_on_pages', FALSE);
 		add_option('vk_share_button_show_on_home', FALSE);
+		add_option('vk_share_button_show_on_cats', FALSE);
+		add_option('vk_share_button_show_on_tags', FALSE);
+		add_option('vk_share_button_show_on_date', FALSE);
+		add_option('vk_share_button_show_on_auth', FALSE);
+		add_option('vk_share_button_show_on_srch', FALSE);
+		
 		add_option('vk_share_button_noparse', 'true');
 		add_option('vk_share_button_exlude', '');
 		add_option('vk_share_button_deslen', '350');
@@ -110,9 +133,16 @@ class VKShareButton
 		register_setting( 'vksb-settings-group', 'vk_share_button_thumbnail' );
 		register_setting( 'vksb-settings-group', 'vk_share_button_position' );
 		register_setting( 'vksb-settings-group', 'vk_share_button_vposition' );
+		
 		register_setting( 'vksb-settings-group', 'vk_share_button_show_on_posts' );
 		register_setting( 'vksb-settings-group', 'vk_share_button_show_on_pages' );
 		register_setting( 'vksb-settings-group', 'vk_share_button_show_on_home' );
+		register_setting( 'vksb-settings-group', 'vk_share_button_show_on_cats' );
+		register_setting( 'vksb-settings-group', 'vk_share_button_show_on_tags' );
+		register_setting( 'vksb-settings-group', 'vk_share_button_show_on_date' );
+		register_setting( 'vksb-settings-group', 'vk_share_button_show_on_auth' );
+		register_setting( 'vksb-settings-group', 'vk_share_button_show_on_srch' );
+		
 		register_setting( 'vksb-settings-group', 'vk_share_button_noparse' );
 		register_setting( 'vksb-settings-group', 'vk_share_button_exlude' );
 		register_setting( 'vksb-settings-group', 'vk_share_button_deslen' );
@@ -136,8 +166,6 @@ class VKShareButton
 		$vksb_thumb = get_option('vk_share_button_thumbnail');
 		$vksb_pos = get_option('vk_share_button_position');
 		$vksb_vpos = get_option('vk_share_button_vposition');
-		$vksb_showpost = get_option('vk_share_button_show_on_posts');
-		$vksb_showpage = get_option('vk_share_button_show_on_pages');
 		$noparse = get_option('vk_share_button_noparse');
 			
 		include('vk-share-button-options.php');
@@ -211,8 +239,6 @@ class VKShareButton
 		$clear_button = $this->the_button();
 		$pos = get_option('vk_share_button_position');
 		$vpos = get_option('vk_share_button_vposition');
-		$show_on_post = get_option('vk_share_button_show_on_posts');
-		$show_on_page = get_option('vk_share_button_show_on_pages');
 		
 		if ($this->use_own_css)
 			// User defined CSS
@@ -225,7 +251,14 @@ class VKShareButton
 				// left alignment
 				$the_button = "<div style=\"float: $pos; margin: 0 10px 5px 0;\" class=\"vk-button\">\r\n$clear_button\r\n</div>";
 
-		if (is_single() && $show_on_post || is_page() && $show_on_page || is_home() && $this->show_on_home) {
+		if (is_single()   && $this->show_on_post || 
+			is_page() 	  && $this->show_on_page || 
+			is_home() 	  && $this->show_on_home ||
+			is_category() && $this->show_on_cats ||
+			is_tag() 	  && $this->show_on_tags ||
+			is_date()     && $this->show_on_date ||
+			is_author()   && $this->show_on_auth ||
+			is_search()   && $this->show_on_srch) {
 			if ($vpos == 'top')
 				// place button before post
 				return $the_button . $content;
@@ -243,11 +276,6 @@ class VKShareButton
 		$mofile = dirname(__FILE__) . '/lang/' . $this->plugin_domain . '-' . get_locale() . '.mo';
 		
 		load_textdomain($this->plugin_domain, $mofile);
-	}
-	
-	function register_widget()
-	{
-		
 	}
 } // class VKShareButton
 

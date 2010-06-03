@@ -87,15 +87,38 @@ jQuery(document).ready(function($){
 	
 	<tr valign="top">
 	<th scope="row"><?php _e('The Button displays on', $this->plugin_domain) ?></th>
-	<td> <fieldset><legend class="screen-reader-text"><span><?php _e('The Button displays on', $this->plugin_domain) ?></span></legend><label for="vk_share_button_show_on_posts">
-	<input name="vk_share_button_show_on_posts" type="checkbox" id="vk_share_button_show_on_posts" value="1" <?php checked(TRUE, $vksb_showpost); ?> />
-	<?php _e('Posts', $this->plugin_domain) ?></label>
-	<legend class="screen-reader-text"><span>Button are shown on</span></legend><label for="vk_share_button_show_on_pages">
-	<input name="vk_share_button_show_on_pages" type="checkbox" id="vk_share_button_show_on_pages" value="1" <?php checked(TRUE, $vksb_showpage); ?> />
-	<?php _e('Pages', $this->plugin_domain) ?></label>
-	<legend class="screen-reader-text"><span>Button are shown on</span></legend><label for="vk_share_button_show_on_home">
+	<td> <fieldset>
+	<label for="vk_share_button_show_on_home">
 	<input name="vk_share_button_show_on_home" type="checkbox" id="vk_share_button_show_on_home" value="1" <?php checked(TRUE, $this->show_on_home); ?> />
-	<?php _e('Frontpage', $this->plugin_domain) ?></label>
+	<?php _e('Frontpage', $this->plugin_domain) ?></label><br />
+	
+	<label for="vk_share_button_show_on_posts">
+	<input name="vk_share_button_show_on_posts" type="checkbox" id="vk_share_button_show_on_posts" value="1" <?php checked(TRUE, $this->show_on_post); ?> />
+	<?php _e('Posts', $this->plugin_domain) ?></label><br />
+	
+	<label for="vk_share_button_show_on_pages">
+	<input name="vk_share_button_show_on_pages" type="checkbox" id="vk_share_button_show_on_pages" value="1" <?php checked(TRUE, $this->show_on_page); ?> />
+	<?php _e('Pages', $this->plugin_domain) ?></label><br />
+		
+	<label for="vk_share_button_show_on_cats">
+	<input name="vk_share_button_show_on_cats" type="checkbox" id="vk_share_button_show_on_cats" value="1" <?php checked(TRUE, $this->show_on_cats); ?> />
+	<?php _e('Category archives', $this->plugin_domain) ?></label><br />
+	
+	<label for="vk_share_button_show_on_tags">
+	<input name="vk_share_button_show_on_tags" type="checkbox" id="vk_share_button_show_on_tags" value="1" <?php checked(TRUE, $this->show_on_tags); ?> />
+	<?php _e('Tag listing', $this->plugin_domain) ?></label><br />
+	
+	<label for="vk_share_button_show_on_date">
+	<input name="vk_share_button_show_on_date" type="checkbox" id="vk_share_button_show_on_date" value="1" <?php checked(TRUE, $this->show_on_date); ?> />
+	<?php _e('Date-based archives', $this->plugin_domain) ?></label><br />
+	
+	<label for="vk_share_button_show_on_auth">
+	<input name="vk_share_button_show_on_auth" type="checkbox" id="vk_share_button_show_on_auth" value="1" <?php checked(TRUE, $this->show_on_auth); ?> />
+	<?php _e('Author archives', $this->plugin_domain) ?></label><br />
+	
+	<label for="vk_share_button_show_on_srch">
+	<input name="vk_share_button_show_on_srch" type="checkbox" id="vk_share_button_show_on_srch" value="1" <?php checked(TRUE, $this->show_on_srch); ?> />
+	<?php _e('Search results', $this->plugin_domain) ?></label>
 	</fieldset></td>
 	</tr>
 	

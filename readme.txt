@@ -3,15 +3,15 @@
 Contributors: jackyfox
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NRYHZVJNPGGA6
 Tags: vkontakte, share, social, Post, plugin, links, page, social bookmarks, social bookmarking, bookmarking, bookmarks, bookmark
-Requires at least: 2.7
+Requires at least: 2.8
 Tested up to: 3.0
-Stable tag: 1.0.0.38
+Stable tag: 1.0.0.41
 
 Plugin allows you to add fully customizable share button of VKontakte social network.
 
 == Description ==
 
-VKontakte Share Button plugin brings powerfull way to add VKontakte share button for you posts and pages.
+VKontakte Share Button plugin brings powerful way to add VKontakte share button for you posts and pages.
 
 It supports all functions of VKontakte API and easy customizable:
 
@@ -23,11 +23,13 @@ It supports all functions of VKontakte API and easy customizable:
 *  Can be used description from meta tag `description`
 *  Use your own site logo image specifying link or with meta tag `image-src`
 
-You can use the shortcode `[vk-share-button]`. Remeber to exclude a page with the shortcode to avoid a problems.
+You can use the shortcode `[vk-share-button]`.
 
-Also can be used PHP code inside the Loop in your template:
+Also can be used PHP code in your template:
 
 `<?php if (class_exists('VKShareButton'))
+		  if(!isset($VKShareButton)
+		      $VKShareButton = new VKShareButton();
           echo $VKShareButton->the_button() ?>`
 
 
@@ -79,12 +81,14 @@ Simple. Add `clear: right;` property to TweetMeme CSS.
 4. Share Button in action
 
 == Changelog ==
+= 1.0.0.41 =
+* Теперь кнопку можно размещать на страницах архивов категорий, меток, авторов и страницы поиска
 
 = 1.0.0.38 =
 * Custom CSS
 
 = 1.0.0.36 =
-* Now you can enanle the buttons on the frontpage
+* Now you can enable the buttons on the frontpage
 * Auto description length is customizable
 
 = 1.0.0.35 =
@@ -118,4 +122,4 @@ Upgrade if you get "..." instead of the description in Auto mode.
 New features. See changelog
 
 = 1.0.0.30 =
-If you have plroblem with spaces between parts of the button you should upgrade
+If you have problem with spaces between parts of the button you should upgrade
