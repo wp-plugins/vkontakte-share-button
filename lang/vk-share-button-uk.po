@@ -1,0 +1,274 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: VK Share Button\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-01 17:06+0300\n"
+"PO-Revision-Date: 2010-06-13 17:04+0300\n"
+"Last-Translator: Jurko Chervony <info@skinik.name>\n"
+"Language-Team: WordPress UA <blog@wordpress.ua>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: UKRAINE\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../vk-share-button-options.php:32
+msgid "VKontakte Share Button Settings"
+msgstr "Налаштування кнопки публікації вКонтакті"
+
+#: ../vk-share-button-options.php:40
+msgid "Button type"
+msgstr "Тип кнопки"
+
+#: ../vk-share-button-options.php:42
+msgid "Rounded corners with counter"
+msgstr "Заокруглені кути і лічильник"
+
+#: ../vk-share-button-options.php:43
+msgid "Rounded corners without counter"
+msgstr "Заокруглені кути без лічильника"
+
+#: ../vk-share-button-options.php:44
+msgid "Sharp corners with counter"
+msgstr "Гострі кути і лічильник"
+
+#: ../vk-share-button-options.php:45
+msgid "Sharp corners without counter"
+msgstr "Гострі кути без лічильника"
+
+#: ../vk-share-button-options.php:46
+msgid "Text link with icon"
+msgstr "Текстове посилання зі значком"
+
+#: ../vk-share-button-options.php:47
+msgid "Text link without icon"
+msgstr "Текстове посилання без значка"
+
+#: ../vk-share-button-options.php:48
+msgid "Custom"
+msgstr "Власний дизайн"
+
+#: ../vk-share-button-options.php:50
+msgid "Choose appearance of the button"
+msgstr "Оберіть зовнішній вигляд кнопки"
+
+#: ../vk-share-button-options.php:55
+msgid "Button horizontal position"
+msgstr "Горизонтальне розміщення кнопки"
+
+#: ../vk-share-button-options.php:57
+msgid "Right"
+msgstr "Справа"
+
+#: ../vk-share-button-options.php:58
+msgid "Left"
+msgstr "Зліва"
+
+#: ../vk-share-button-options.php:60
+msgid "Select which side you want to display the button: right or left"
+msgstr "Оберіть де розмістити кнопку: справа, зліва"
+
+#: ../vk-share-button-options.php:65
+msgid "Button vertical position"
+msgstr "Вертикальне розміщення кнопки"
+
+#: ../vk-share-button-options.php:67
+msgid "On top of post"
+msgstr "Перед публікацією"
+
+#: ../vk-share-button-options.php:68
+msgid "On bottom of post"
+msgstr "Після публікації"
+
+#: ../vk-share-button-options.php:70
+msgid "Sets up before or after post/page button are shown"
+msgstr "Після або перед публікацією показувати кнопку"
+
+#: ../vk-share-button-options.php:75
+msgid "Use own CSS"
+msgstr "Використати власний CSS"
+
+#: ../vk-share-button-options.php:78
+#: ../vk-share-button-options.php:168
+msgid "Enable"
+msgstr "Дозволити"
+
+#: ../vk-share-button-options.php:83
+msgid "Custom CSS"
+msgstr "Власний CSS"
+
+#: ../vk-share-button-options.php:85
+msgid "CSS for div wraps the button. <strong>Notice</strong>, horizontal position option disabled with custom CSS. You sould take care of the button alignment, eg <code>float: right; margin: 0 0 5px 10px;</code> for the right position."
+msgstr "Стилі CSS для div, що обгортає кнопку. <strong>Зверніть увагу</strong>, при використанні власного CSS горизонтальне розміщенні вимкнене.  Вам треба самому зробити таке вирівнювання, наприклад, так: <code>float: right; margin: 0 0 5px 10px;</code>, щоб розмістити кнопку справа."
+
+#: ../vk-share-button-options.php:89
+msgid "The Button displays on"
+msgstr "Показувати кнопку"
+
+#: ../vk-share-button-options.php:92
+msgid "Posts"
+msgstr "В публікаціях"
+
+#: ../vk-share-button-options.php:95
+msgid "Pages"
+msgstr "На сторінках"
+
+#: ../vk-share-button-options.php:98
+msgid "Frontpage"
+msgstr "На головній"
+
+#: ../vk-share-button-options.php:102
+msgid "Category archives"
+msgstr "В категоріях"
+
+#: ../vk-share-button-options.php:106
+msgid "Tag listing"
+msgstr "В теґах"
+
+#: ../vk-share-button-options.php:110
+msgid "Date-based archives"
+msgstr "В архівах по даті"
+
+#: ../vk-share-button-options.php:114
+msgid "Author archives"
+msgstr "В архівах автора"
+
+#: ../vk-share-button-options.php:118
+msgid "Search results"
+msgstr "В результатах пошуку"
+
+#: ../vk-share-button-options.php:123
+msgid "Exclude pages and posts with IDs"
+msgstr "Виключити сторінки/публікації з такими ID"
+
+#: ../vk-share-button-options.php:125
+msgid "Specify IDs of pages and posts which should stay without buttons (separated by commas, eg <code>4, 8, 15, 16, 23, 42</code>)"
+msgstr "Вкажіть ID сторінок і публікацій, на яких слід прибрати кнопку (розділяйте комою, наприклад, <code>4, 8, 15, 16, 23, 42</code>)"
+
+#: ../vk-share-button-options.php:129
+msgid "Text on button"
+msgstr "Текст на кнопці"
+
+#: ../vk-share-button-options.php:131
+msgid "Text are displayed on the button or html code for custom button type"
+msgstr "Текст або html-код для власного дизайну"
+
+#: ../vk-share-button-options.php:135
+msgid "Description"
+msgstr "Опис"
+
+#: ../vk-share-button-options.php:137
+msgid "Auto"
+msgstr "Авто"
+
+#: ../vk-share-button-options.php:138
+msgid "Global"
+msgstr "Глобальний"
+
+#: ../vk-share-button-options.php:139
+msgid "None"
+msgstr "Без опису"
+
+#: ../vk-share-button-options.php:141
+msgid "Page description. Auto - forepart of post. Global - your own custom description (the same for each page). None - no description (good if you use meta tag <code>description</code>)"
+msgstr "Опис сторінки. Авто — перша частина тексту. Глобальний — свій опис, загальний для всіх сторінок сайту. Без опису - опис відсутній (це зручно, коли Ви використовуєте мета-теґ <code>description</code>)"
+
+#: ../vk-share-button-options.php:146
+msgid "Custom description text"
+msgstr "Текст глобального опису"
+
+#: ../vk-share-button-options.php:147
+msgid "Type global site description below"
+msgstr "Введіть глобальний опис"
+
+#: ../vk-share-button-options.php:154
+msgid "Auto description length"
+msgstr "Довжина авто-опису"
+
+#: ../vk-share-button-options.php:156
+msgid "Default - first 350 characters of post"
+msgstr "Стандартно, перші 350 символів"
+
+#: ../vk-share-button-options.php:160
+msgid "Logo link"
+msgstr "Посилання на логотип"
+
+#: ../vk-share-button-options.php:162
+msgid "Link to thumbnail logo image, e.g. <code>http://your.site/vk.png</code>"
+msgstr "Посилання на невелике лого сайту, наприклад, <code>http://your.site/vk.png</code>"
+
+#: ../vk-share-button-options.php:166
+msgid "Additional API parsing request"
+msgstr "Додатковий API запит до сайту"
+
+#: ../vk-share-button-options.php:169
+msgid "Disable"
+msgstr "Заборонити"
+
+#: ../vk-share-button-options.php:171
+msgid "Allow VKontakte to send request for empty share button parameters. Useful if you use meta tag <code>description</code> or <code>&lt;link rel=\"image_src\" href=\"http://mysite.com/mypic.jpg\" /&gt;</code> for logo image"
+msgstr "Дозволяє сайту вКонтакті надсилати запит для визначення додаткових параметрів кнопки публікації. Це корисно коли Ви використовуєте мета-теґ <code>description</code> або <code>&lt;link rel=\"image_src\" href=\"http://mysite.com/mypic.jpg\" /&gt;</code> для логотипу"
+
+#: ../vk-share-button-options.php:177
+msgid "Save Changes"
+msgstr "Зберегти зміни"
+
+#: ../vk-share-button-options.php:182
+msgid "Also, you can use <code>[vk-share-button]</code> shortcode to place the buttons anywhere on your posts and pages. Remember to exclude a page with the shortcode to avoid a problems."
+msgstr "Ви також можете використати код <code>[vk-share-button]</code> для розміщення кнопки в будь-якому місці Ваших публікацій і сторінок. Не забудьте виключити сторінку з кодом, щоб уникнути проблем."
+
+#: ../vk-share-button-options.php:184
+msgid "Like this plugin?"
+msgstr "Подобається плаґін?"
+
+#: ../vk-share-button-options.php:185
+msgid "Why not do any of the following:"
+msgstr "Чому б тоді не:"
+
+#: ../vk-share-button-options.php:188
+msgid "Link to it so other folks can find out about it."
+msgstr "Дати посилання, щоб інші люди дізналися про нього."
+
+#: ../vk-share-button-options.php:189
+msgid "<a href=\"http://wordpress.org/extend/plugins/vkontakte-share-button/\">Give it a good rating</a> on WordPress.org."
+msgstr "<a href=\"http://wordpress.org/extend/plugins/vkontakte-share-button/\">Поставити хорошу оцінку</a> на WordPress.org."
+
+#: ../vk-share-button-options.php:191
+msgid "Need support?"
+msgstr "Потрібна допомога?"
+
+#: ../vk-share-button-options.php:192
+msgid "If you have any problems or good ideas, please talk about them in the <a href=\"http://wordpress.org/tags/vkontakte-share-button\">Support forums</a> or <a href=\"http://wordpress.org/tags/vkontakte-share-button\">Plugin page</a>."
+msgstr "Якщо у вас є ідеї, пропозиції, зауваження — можете поділитися ними на <a href=\"http://wordpress.org/tags/vkontakte-share-button\">форумах підтримки</a> або на <a href=\"http://wordpress.org/tags/vkontakte-share-button\">сторінці плаґіну</a>."
+
+#: ../vk-share-button-options.php:199
+msgid "Support project"
+msgstr "Підтримайте проект"
+
+#: ../vk-share-button-options.php:213
+msgid "Donate Webmoney"
+msgstr "Презентувати Webmoney"
+
+#: ../vk-share-button.php:64
+msgid "VKontakte share button plugin requires Wordpress 2.8 or newer. <a href=\"http://codex.wordpress.org/Upgrading_WordPress\">Please update!</a>"
+msgstr "Плаґін кнопки вКонтакті потребує WP 2.8+. <a href=\"http://codex.wordpress.org/Upgrading_WordPress\">Оновіть WordPress!</a>"
+
+#: ../vk-share-button.php:157
+msgid "VKontakte Share Button Plugin Settings"
+msgstr "Налаштування плаґіну кнопки публікації вКонтакті"
+
+#: ../vk-share-button.php:157
+msgid "VK Share Button"
+msgstr "Кнопка вКонтакті"
+
+#: ../vk-share-button.php:284
+msgid "Class VKShareButton already declared!"
+msgstr "Клас VKShareButton вже оголошено!"
+
+#~ msgid "Default"
+#~ msgstr "По-умолчанию"
+
