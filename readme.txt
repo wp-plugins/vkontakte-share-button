@@ -1,11 +1,11 @@
 === VKontakte Share Button ===
 
-Contributors: jackyfox
+Contributors: jackyfox, skinik
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NRYHZVJNPGGA6
 Tags: vkontakte, share, social, Post, plugin, links, page, social bookmarks, social bookmarking, bookmarking, bookmarks, bookmark
 Requires at least: 2.8
 Tested up to: 3.0
-Stable tag: 1.0.0.41
+Stable tag: 1.0.0.42
 
 Plugin allows you to add fully customizable share button of VKontakte social network.
 
@@ -81,6 +81,9 @@ Simple. Add `clear: right;` property to TweetMeme CSS.
 4. Share Button in action
 
 == Changelog ==
+= 1.0.0.42 =
+* Перевод страницы настроек плагина на украинский выполнен [Юрком Червоным](http://skinik.name/)
+
 = 1.0.0.41 =
 * Теперь кнопку можно размещать на страницах архивов категорий, меток, авторов и страницы поиска
 
@@ -109,6 +112,9 @@ Simple. Add `clear: right;` property to TweetMeme CSS.
 * First public release
 
 == Upgrade Notice ==
+= 1.0.0.42 =
+Доступен перевод страницы настроек на украинский язык.
+
 = 1.0.0.38 =
 If you were dissatisfied with the standard settings, now you can use your own CSS.
 
