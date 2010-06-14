@@ -1,6 +1,6 @@
 === VKontakte Share Button ===
 
-Contributors: jackyfox, skinik
+Contributors: jackyfox
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NRYHZVJNPGGA6
 Tags: vkontakte, share, social, Post, plugin, links, page, social bookmarks, social bookmarking, bookmarking, bookmarks, bookmark
 Requires at least: 2.8
