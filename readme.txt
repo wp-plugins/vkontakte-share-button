@@ -82,7 +82,7 @@ Simple. Add `clear: right;` property to TweetMeme CSS.
 
 == Changelog ==
 = 1.0.0.43 =
-* Устанен баг «expected identifier string or number», возникающий в IE при разрешении дополнительного API-запроса. [Николай](http://jug.ua/), спасибо!
+* Устанен баг «expected identifier string or number», возникающий в IE при разрешении дополнительного API-запроса. [Николай](http://education.ua/), спасибо!
 
 = 1.0.0.42 =
 * Перевод страницы настроек плагина на украинский выполнен [Юрком Червоным](http://skinik.name/)
