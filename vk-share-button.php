@@ -215,9 +215,9 @@ class VKShareButton
 			
 		$button_code = "<!-- vkontakte share button -->\r\n<script type=\"text/javascript\">\r\n<!--\r\ndocument.write(VK.Share.button(\r\n{\r\n";
 		$button_code .= "  url: '$link',\r\n";
-		$button_code .= "  title: '$title',\r\n"; 
-		$button_code .= $descr != '' ? "  description: '$descr',\r\n" : '';
-		$button_code .= $thumb != '' ? "  image: '$thumb'" : '';
+		$button_code .= "  title: '$title'"; 
+		$button_code .= $descr != '' ? ",\r\n  description: '$descr'" : '';
+		$button_code .= $thumb != '' ? ",\r\n  image: '$thumb'" : '';
 		$button_code .= $noparse == 'true' ? ",\r\n  noparse: $noparse \r\n}, \r\n{\r\n" : "  \r\n}, \r\n{\r\n";
 		$button_code .= "  type: '$type',\r\n";
 		$button_code .= "  text: '$text'\r\n}));";
