@@ -4,8 +4,8 @@ Contributors: jackyfox
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NRYHZVJNPGGA6
 Tags: vkontakte, share, social, Post, plugin, links, page, social bookmarks, social bookmarking, bookmarking, bookmarks, bookmark
 Requires at least: 2.8
-Tested up to: 3.0
-Stable tag: 1.0.0.43
+Tested up to: 3.0.1
+Stable tag: 1.0.1
 
 Plugin allows you to add fully customizable share button of VKontakte social network.
 
@@ -81,6 +81,9 @@ Simple. Add `clear: right;` property to TweetMeme CSS.
 4. Share Button in action
 
 == Changelog ==
+= 1.0.1 =
+* Пофиксен баг при выполнении javascript'a кнопки, возникающий из-за «лишней» запятой.
+
 = 1.0.0.43 =
 * Устанен баг «expected identifier string or number», возникающий в IE при разрешении дополнительного API-запроса. [Николай](http://education.ua/), спасибо!
 
@@ -115,6 +118,10 @@ Simple. Add `clear: right;` property to TweetMeme CSS.
 * First public release
 
 == Upgrade Notice ==
+= 1.0.1 =
+Рекомендую обновить плагин, так как старая версия при определенной настройке приводит к ошибке в javascript, формирующем кнопку.
+Извините =)
+
 = 1.0.0.43 =
 Если вас беспокоит сообщение об ошибке «expected identifier string or number» в Internet Explorer, обновитесь.
 
